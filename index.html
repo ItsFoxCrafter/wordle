@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>Wordle</title>
+
+  <link href='style.css' rel='stylesheet'>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+  <header class="hero">
+    <h1>Wordle</h1>
+    <h3>Online Wordle Game</h3>
+  </header>
+
+  <section class="game-perefernce">
+    <input type="radio" name="difficulty" id="difficultyEasy">
+    <span>Easy</span>
+    <input type="radio" name="difficulty" id="difficultyMedium">
+    <span>Medium</span>
+    <input type="radio" name="difficulty" id="difficultyHard">
+    <span>Hard</span>
+    <input type="radio" name="difficulty" id="difficultyImpossible">
+    <span>Impossible</span>
+    <button class="random-button"><a href="#">Random</a></button>
+    <button class="play-button"><a href="#">Start Game</a></button>
+  </section>
+
+  <script defer type="text/javascript" src="main.js"></script>
 </body>
 </html>

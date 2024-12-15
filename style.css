@@ -1,1 +1,84 @@
-/* Add styles here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); /* Importing the Poppins font family from Google Fonts. */
+
+* {
+    margin: 0; /* Resetting default margin for all elements. */
+    padding: 0; /* Resetting default padding for all elements. */
+    box-sizing: border-box; /* Ensuring padding and border are included in element's total width/height. */
+    font-family: 'poppins', sans-serif; /* Applying Poppins font to all elements. */
+}
+
+@media (prefers-color-scheme: light) { /* Styles for users with light mode preference. */
+     :root {
+      --text: #040316; /* Dark text color for readability in light mode. */
+      --background: #fbfbfe; /* Light background color for light mode. */
+      --primary: #2bff00; /* Bright green primary accent color. */
+      --secondary: #e3ffdb; /* Light green secondary accent color. */
+      --accent: #ffea00; /* Bright yellow for additional accents. */
+    }
+}
+@media (prefers-color-scheme: dark) { /* Styles for users with dark mode preference. */
+    :root {
+      --text: #eae9fc; /* Light text color for readability in dark mode. */
+      --background: #010104; /* Dark background color for dark mode. */
+      --primary: #2bff00; /* Same bright green primary accent color as light mode. */
+      --secondary: #082400; /* Dark green secondary accent color for dark mode. */
+      --accent: #ffea00; /* Same bright yellow accent color as light mode. */
+    }
+}
+  
+body {
+    background-color: var(--background); /* Sets background color based on user's color scheme. */
+    color: var(--text); /* Sets text color based on user's color scheme. */
+    display: flex; /* Enables Flexbox layout. */
+    flex-direction: column;
+    justify-content: center; /* Centers content horizontally. */
+    align-items: center; /* Centers content vertically. */
+    min-height: 100vh; /* Ensures the body takes up the full viewport height. */
+}
+
+.hero {
+    text-align: center; 
+}
+
+.hero h1 {
+    color: var(--accent); 
+}
+.hero h3 {
+    color: var(--primary); 
+}
+
+section {
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: repeat(8, 100px); /* Two equal columns */
+    grid-template-areas:
+        "header header header header header header header header"
+        "button button button button button2 button2 button2 button2";
+    gap: 5px; /* Space between items */
+}
+
+section .random-button {
+    grid-area: button;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+section .play-button {
+    grid-area: button2;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+section .play-button,
+section .random-button {
+    margin-top: 15px;
+    height: 50px;
+    background-color: var(--secondary);
+    border: 2px solid var(--primary);
+}
+
+section .play-button a,
+section .random-button a {
+    text-decoration: none;
+    color: var(--accent); 
+}
